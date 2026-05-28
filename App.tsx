@@ -140,15 +140,15 @@ export default function App() {
         <View style={s.overlay} />
         <SafeAreaView style={s.safe}>
           <View style={s.header}>
-            <Text style={s.headerTitle}>BONYTA FM</Text>
-            <Text style={s.headerSub}>CREANDO Y RECORDANDO EXITOS!</Text>
+            <Text style={s.headerTitle}>BONYTAFM</Text>
+            <Text style={s.headerSub}>¡CREANDO Y RECORDANDO ÉXITOS!</Text>
           </View>
 
           <View style={s.content}>
             {tab === 'home' && (
               <ScrollView style={s.scroll} contentContainerStyle={s.scrollPad} showsVerticalScrollIndicator={false}>
-                <Text style={s.tagline}>Creando y Recordando Exitos!</Text>
-                <Text style={s.taglineDesc}>Tu estacion de radio favorita</Text>
+                <Text style={s.tagline}>¡Creando y Recordando Éxitos!</Text>
+                <Text style={s.taglineDesc}>Tu estación de radio favorita</Text>
 
                 {/* Player */}
                 <View style={s.playerWrap}>
@@ -169,7 +169,7 @@ export default function App() {
                       ))}
                     </View>
 
-                    <Text style={s.stationName}>BONYTA FM</Text>
+                    <Text style={s.stationName}>BONYTAFM</Text>
                     <Text style={s.stationSub}>Radio en Vivo</Text>
 
                     <TouchableOpacity style={[s.playBtn, playing && s.playBtnStop]} onPress={togglePlay} activeOpacity={0.8} disabled={loading}>
@@ -180,7 +180,7 @@ export default function App() {
                 </View>
 
                 {/* Social */}
-                <Text style={s.secTitle}>Siguenos</Text>
+                <Text style={s.secTitle}>Síguenos</Text>
                 <View style={s.socialRow}>
                   {[
                     { key: 'facebook', bg: '#1877F2', label: 'Facebook', icon: 'f' },
@@ -196,22 +196,6 @@ export default function App() {
                   ))}
                 </View>
 
-                {/* Programacion Card (replaces Mensaje del Dia) */}
-                <View style={s.progCard}>
-                  <Text style={s.progIcon}>🎵</Text>
-                  <Text style={s.progTitle}>Programacion</Text>
-                  <View style={s.progDivider} />
-                  <View style={s.progRow}>
-                    <Text style={s.progDay}>Lunes a Viernes</Text>
-                    <Text style={s.progTime}>6AM - 10PM</Text>
-                  </View>
-                  <View style={s.progRow}>
-                    <Text style={s.progDay}>Sabados y Domingos</Text>
-                    <Text style={s.progTime}>8AM - 12AM</Text>
-                  </View>
-                  <View style={s.progDivider} />
-                  <Text style={s.progFooter}>La mejor musica, las 24 horas</Text>
-                </View>
                 <View style={{ height: 24 }} />
               </ScrollView>
             )}
@@ -259,8 +243,8 @@ function ContactScreen() {
   return (
     <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       <ScrollView style={s.scroll} contentContainerStyle={s.scrollPad} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
-        <Text style={s.secTitle}>Contactanos</Text>
-        <Text style={s.contactDesc}>Envianos un mensaje. Nos encantaria saber de ti.</Text>
+        <Text style={s.secTitle}>Contáctanos</Text>
+        <Text style={s.contactDesc}>Envíanos tu mensaje. Nos encantaría saber de ti.</Text>
         <View style={s.formCard}>
           {[
             { label: 'Nombre', val: name, set: setName, ph: 'Tu nombre' },
@@ -318,11 +302,11 @@ function AboutScreen({ openLink }: { openLink: (url: string) => void }) {
     <ScrollView style={s.scroll} contentContainerStyle={s.scrollPad} showsVerticalScrollIndicator={false}>
       <Text style={s.secTitle}>Sobre Nosotros</Text>
       <View style={s.aboutCard}>
-        <Text style={s.aboutTitle}>BONYTA FM</Text>
-        <Text style={s.aboutSub}>CREANDO Y RECORDANDO EXITOS!</Text>
+        <Text style={s.aboutTitle}>BONYTAFM</Text>
+        <Text style={s.aboutSub}>¡CREANDO Y RECORDANDO ÉXITOS!</Text>
         <View style={s.divider} />
-        <Text style={s.aboutText}>BONYTA FM es tu estacion de radio favorita, dedicada a traerte la mejor musica para crear nuevos recuerdos y revivir los mejores momentos. Transmitimos los exitos de ayer, hoy y siempre.</Text>
-        <Text style={s.aboutText}>Sintonizanos desde cualquier lugar del mundo y disfruta de la mejor programacion musical con los mejores locutores y DJs.</Text>
+        <Text style={s.aboutText}>BONYTAFM es tu estación de radio favorita, dedicada a traerte la mejor música para crear nuevos recuerdos y revivir los mejores momentos. Transmitimos los éxitos de ayer y de hoy.</Text>
+        <Text style={s.aboutText}>Escúchanos desde cualquier lugar del mundo y disfruta de la mejor programación musical con tus DJs favoritos.</Text>
       </View>
       <View style={s.aboutCard}>
         <Text style={s.aboutCardTitle}>Nuestras Redes</Text>
@@ -332,7 +316,7 @@ function AboutScreen({ openLink }: { openLink: (url: string) => void }) {
         <Text style={s.aboutCardTitle}>Contacto</Text>
         <LinkRow items={contacts} />
       </View>
-      <Text style={s.footer}>© 2026 BONYTA FM{'\n'}Todos los derechos reservados</Text>
+      <Text style={s.footer}>© 2026 BONYTAFM{'\n'}Todos los derechos reservados</Text>
       <View style={{ height: 24 }} />
     </ScrollView>
   );
@@ -378,15 +362,6 @@ const s = StyleSheet.create({
   socialIcon: { width: 52, height: 52, borderRadius: 16, alignItems: 'center', justifyContent: 'center', shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.3, shadowRadius: 6, elevation: 4 },
   socialIconText: { fontSize: 18, fontWeight: '800', color: '#fff' },
   socialLabel: { fontSize: 12, color: C.muted, fontWeight: '600', marginTop: 8 },
-
-  progCard: { backgroundColor: C.card, borderRadius: 16, borderWidth: 1, borderColor: C.greenBorder, padding: 24, alignItems: 'center' },
-  progIcon: { fontSize: 28, marginBottom: 10 },
-  progTitle: { fontSize: 16, fontWeight: '700', color: C.yellow, marginBottom: 12, letterSpacing: 1 },
-  progDivider: { height: 1, backgroundColor: C.greenBorder, width: '80%', marginVertical: 12 },
-  progRow: { flexDirection: 'row', justifyContent: 'space-between', width: '100%', paddingHorizontal: 12, marginVertical: 4 },
-  progDay: { fontSize: 14, color: C.white, fontWeight: '600' },
-  progTime: { fontSize: 14, color: C.yellow, fontWeight: '700' },
-  progFooter: { fontSize: 13, color: C.muted, fontStyle: 'italic', marginTop: 4 },
 
   nav: { flexDirection: 'row', borderTopWidth: 1, borderTopColor: C.greenDim, backgroundColor: 'rgba(10,15,5,0.95)', paddingBottom: 4 },
   navItem: { flex: 1, alignItems: 'center', paddingVertical: 10 },
